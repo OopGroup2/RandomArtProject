@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CreateNode()
+comment1.params=x\ y
+comment1.target=double\ evaluate(double,\ double)
+comment1.text=\ /**\r\n\ Evaluate\ the\ function\ represented\ by\ this\ node\r\n\ for\ the\ given\ x\ and\ y\ values.\r\n
+comment2.params=
+comment2.target=java.lang.String\ exprAsString()
+numComments=3

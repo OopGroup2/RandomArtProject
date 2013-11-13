@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ randomButton()
+comment1.params=
+comment1.target=void\ toRandom()
+comment2.params=
+comment2.target=javax.swing.JTextField\ makeTextField()
+comment3.params=
+comment3.target=void\ cancelButton()
+numComments=4
