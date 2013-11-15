@@ -1,8 +1,21 @@
 import java.lang.Math;
 import java.util.Random;
  class CreateNode {
- 
-  public CreateNode() {
+  int data;
+  CreateNode left;
+  CreateNode right;
+  
+  public CreateNode(){
+      this.data=0;
+      this.left =null;
+      this.right = null;
+    }
+  public CreateNode(int data) {
+      this.data = data;
+  
+  }
+  public CreateNode(int data,CreateNode left,CreateNode right) {
+      this.data = data;
   
   }
   
