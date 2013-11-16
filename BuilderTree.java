@@ -1,44 +1,26 @@
-
-import java.util.Random;
-class BuilderTree extends CreateNode{
- public static final int MAX_LEVEL = 8;
-
- private Random random;
+//import java.util.Math;
+class BuilderTree {
+ private static final int MAX_HEIGHT = 8;
+ private static final int MIN_HEIGHT = 4;
  private CreateNode root;
  
  public BuilderTree(){
-  random = new Random();
-  root = new CreateNode();
+  buildTree();
  }
  
- //this method will build the tree that has the max level is eight.
- public CreateNode build() {
- return null;
+ public CreateNode buildTree() {
+  CreateNode leaf = new CreateNode(null);
+  this.root = new CreateNode(leaf);
+  
+  for (int i = 0; i < (int)(Math.random()*(MAX_HEIGHT-MIN_HEIGHT+1)+ MIN_HEIGHT); i++) {
+    CreateNode node = new CreateNode(null);
+    leaf.addLeaf(node);
+    leaf = node;
+  }
+  return this.root;
  }
- 
- 
-  public void insert(int newInfo){
-        if(root==null){//Tree is empty
-            root= new CreateNode(newInfo);
-        }else{
-            CreateNode backPointer;
-            CreateNode pointer;
-            backPointer=pointer=root;
-        while(pointer != null){ 
-            // search for location of new node
-            backPointer = pointer;
-            if(newInfo < pointer.data){
-                pointer = pointer.left;//move to the left child
-            }else{
-                pointer = pointer.right;//move to the right child
-            }
-        }
-        if (newInfo < backPointer.data){
-            backPointer.left = new CreateNode(newInfo);
-        }else{
-            backPointer.right = new CreateNode(newInfo);
-        } 
-        }
-    }
 }
+  
+
+
 

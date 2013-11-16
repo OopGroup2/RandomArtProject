@@ -1,23 +1,23 @@
 import java.lang.Math;
 import java.util.Random;
  class CreateNode {
-  int data;
-  CreateNode left;
-  CreateNode right;
+     
+  private CreateNode leaf;
+  private String textFunction;
+  private int randomNumber;
   
-  public CreateNode(){
-      this.data=0;
-      this.left =null;
-      this.right = null;
-    }
-  public CreateNode(int data) {
-      this.data = data;
-  
+  public CreateNode(CreateNode leaf) {
+   // addLeaf(leaf);
   }
-  public CreateNode(int data,CreateNode left,CreateNode right) {
-      this.data = data;
   
+  public CreateNode() {
+    this.leaf = null;
   }
+  
+  public void addLeaf(CreateNode leaf){
+    this.leaf = leaf;
+  }
+  
   
   /* /**
   * Evaluate the function represented by this node
@@ -28,9 +28,9 @@ import java.util.Random;
   }
  
  //This method will show the function of random art in the string
- public String exprAsString(){
-    return " "+evaluate(1,2);
-    
+  public String funcToString(){
+    return "";
+ 
   }
 }
 

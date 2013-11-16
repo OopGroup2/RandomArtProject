@@ -1,13 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=CreateNode()
-comment1.params=data
-comment1.target=CreateNode(int)
-comment2.params=data\ left\ right
-comment2.target=CreateNode(int,\ CreateNode,\ CreateNode)
+comment0.params=leaf
+comment0.target=CreateNode(CreateNode)
+comment1.params=
+comment1.target=CreateNode()
+comment2.params=leaf
+comment2.target=void\ addLeaf(CreateNode)
 comment3.params=x\ y
 comment3.target=double\ evaluate(double,\ double)
 comment3.text=\ /**\r\n\ Evaluate\ the\ function\ represented\ by\ this\ node\r\n\ for\ the\ given\ x\ and\ y\ values.\r\n
 comment4.params=
-comment4.target=java.lang.String\ exprAsString()
+comment4.target=java.lang.String\ funcToString()
 numComments=5

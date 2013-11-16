@@ -2,11 +2,14 @@
 dependency1.from=ArtPanel
 dependency1.to=CreateNode
 dependency1.type=UsesDependency
+dependency2.from=BuilderTree
+dependency2.to=CreateNode
+dependency2.type=UsesDependency
 package.editor.height=400
 package.editor.width=560
 package.editor.x=520
 package.editor.y=167
-package.numDependencies=1
+package.numDependencies=2
 package.numTargets=4
 package.showExtends=true
 package.showUses=true
