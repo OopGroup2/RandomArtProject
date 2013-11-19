@@ -5,7 +5,7 @@ class CreateNode {
   private String textFunction;
   private int randomNumber;
   private static final int RANDOM_SINCOS = 3;
-  private static final int RANDOM_XY     = 2;
+  private static final int RANDOM_XY     = 4;
  
   
   public CreateNode(CreateNode leaf) {
@@ -46,15 +46,15 @@ class CreateNode {
   */
   public double evaluate(double x, double y){
     if(this.randomNumber == 0){
-      return Math.sin(Math.PI *x* this.leafNode.evaluate(x, y));
+      return Math.sin(Math.PI*x*this.leafNode.evaluate(x, y));
     }else if(this.randomNumber ==1){
-      return Math.cos(Math.PI *y* this.leafNode.evaluate(x, y));
+      return Math.cos(Math.PI*y* this.leafNode.evaluate(x, y));
     }else if(this.randomNumber ==2){
       return Math.abs(Math.PI*this.leafNode.evaluate(x, y));
-    }else if (this.randomNumber ==3){
+    }else if (this.randomNumber == 3){
       return x;
-    }  else{
-        return y;
+    }else{
+      return y;
     }
   }
  

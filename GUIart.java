@@ -20,7 +20,7 @@ import javax.swing.ImageIcon;
 class GUIart extends JFrame {
   
   private ArtPanel panel;
-  private JPanel panelTop;
+  private JPanel panelEast;
   private JPanel panelSouth;
   private JPanel panelCen;
   private JTextField redText, greenText, blueText;
@@ -28,53 +28,50 @@ class GUIart extends JFrame {
   private JButton functionButton;
   private ImageIcon randomIcon;
   private ImageIcon functionIcon;
-
-  
- 
-  
-  
   public GUIart(){
    setLayout(new BorderLayout());
    
-   panel       = new ArtPanel(600,616);
-   panelTop    = new JPanel();
+   panel       = new ArtPanel(450,450);
+   panelEast    = new JPanel();
    panelSouth  = new JPanel();
    
-   panelTop();
+   panelEast();
    panelSouth();
    
-   
    add(panel,BorderLayout.CENTER);
-   add(panelTop,BorderLayout.NORTH);
+   add(panelEast,BorderLayout.EAST);
    add(panelSouth,BorderLayout.SOUTH);
   }
   
   
-  
-  public void panelTop(){
-   panelTop.setLayout(new GridLayout(3,0));
+  public void panelEast(){
+   panelEast.setLayout(new GridLayout(3,0));
+   panelEast.setBorder(new TitledBorder("Show the RGB's function :"));
+   panelEast.setBackground(Color.white);
    redText =  makeTextField();
    greenText =  makeTextField();
    blueText =  makeTextField();
-   panelTop.add(redText);
-   panelTop.add(greenText);
-   panelTop.add(blueText);
+   panelEast.add(redText);
+   panelEast.add(greenText);
+   panelEast.add(blueText);
 }
-  
     
   public void panelSouth(){
    panelSouth.setLayout(new GridLayout(0,2));
+   panelSouth.setBorder(new TitledBorder("Random Button :"));
+   panelSouth.setBackground(Color.white);
    panelSouth.add(randomButton());
    panelSouth.add(functionButton());
-   panelSouth.setBorder(new TitledBorder("Random Button"));
 }
-   
+    
+  
   //To create the random Button
   public JButton randomButton(){
-    ImageIcon randomIcon =  new ImageIcon("picture/random.jpg");
+    ImageIcon randomIcon =  new ImageIcon("picture/pic1.jpg");
     randomButton = new JButton(randomIcon);
+    randomButton.setBackground(Color.white);
     randomButton.setSize(new Dimension(200, 50));
-    randomButton.setText("Random");
+    //randomButton.setText("Random");
     randomButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -86,16 +83,18 @@ class GUIart extends JFrame {
   }
   
     public JButton functionButton(){
-        ImageIcon functionIcon =  new ImageIcon("picture/function.jpg");
+        ImageIcon functionIcon =  new ImageIcon("picture/pic2.jpg");
         functionButton = new JButton(functionIcon);
+        functionButton.setBackground(Color.white);
         functionButton.setSize(new Dimension(200,50));
-        functionButton.setText("Function");
+        //functionButton.setText("Function");
         functionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("red   =" + redText.getText());
                 System.out.println("green =" + greenText.getText());
                 System.out.println("blue  =" + blueText.getText());
+                System.out.println("__________________________________________________________________________________________");
             }
         });
         add(functionButton);
@@ -106,29 +105,23 @@ class GUIart extends JFrame {
   
     public JTextField makeTextField(){
         JTextField textField = new JTextField();
-        textField.setSize(new Dimension(400, 20));
+        textField.setSize(new Dimension(40, 20));
         textField.setForeground(Color.green);
         textField.setBackground(Color.black);
         return textField;
       }
-      
-      
+
   public void toRandom(){
     CreateNode red = new BuilderTree().buildTree();
-    CreateNode green = new BuilderTree().buildTree();
-    CreateNode blue = new BuilderTree().buildTree();
-    
     panel.rgbString(0, red);
+    CreateNode green = new BuilderTree().buildTree();
     panel.rgbString(1, green);
+    CreateNode blue = new BuilderTree().buildTree();
     panel.rgbString(2, blue);
-    
     redText.setText(red.stringFunction());
     greenText.setText(green.stringFunction());
     blueText.setText(blue.stringFunction());
   }
-  
- 
-  
   
 }
 
