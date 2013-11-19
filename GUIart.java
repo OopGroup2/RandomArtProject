@@ -40,26 +40,35 @@ class GUIart extends JFrame {
    panelTop    = new JPanel();
    panelSouth  = new JPanel();
    
-  
-   panelTop.setLayout(new GridLayout(3,0));
-   redText =  makeTextField();
-   panelTop.add(redText);
-   greenText =  makeTextField();
-   panelTop.add(greenText);
-   blueText =  makeTextField();
-   panelTop.add(blueText);
-  
+   panelTop();
+   panelSouth();
+   
+   
    add(panel,BorderLayout.CENTER);
    add(panelTop,BorderLayout.NORTH);
-   
-   panelSouth.setLayout(new GridLayout(0,2));
-   panelSouth.add(randomButton());
-   panelSouth.add(functionButton());
-  
-   panelSouth.setBorder(new TitledBorder("Random Button"));
    add(panelSouth,BorderLayout.SOUTH);
   }
   
+  
+  
+  public void panelTop(){
+   panelTop.setLayout(new GridLayout(3,0));
+   redText =  makeTextField();
+   greenText =  makeTextField();
+   blueText =  makeTextField();
+   panelTop.add(redText);
+   panelTop.add(greenText);
+   panelTop.add(blueText);
+}
+  
+    
+  public void panelSouth(){
+   panelSouth.setLayout(new GridLayout(0,2));
+   panelSouth.add(randomButton());
+   panelSouth.add(functionButton());
+   panelSouth.setBorder(new TitledBorder("Random Button"));
+}
+   
   //To create the random Button
   public JButton randomButton(){
     ImageIcon randomIcon =  new ImageIcon("picture/random.jpg");
@@ -104,21 +113,18 @@ class GUIart extends JFrame {
       }
       
       
-      
-      
-      
   public void toRandom(){
-    CreateNode rExpr = new BuilderTree().buildTree();
-    CreateNode gExpr = new BuilderTree().buildTree();
-    CreateNode bExpr = new BuilderTree().buildTree();
+    CreateNode red = new BuilderTree().buildTree();
+    CreateNode green = new BuilderTree().buildTree();
+    CreateNode blue = new BuilderTree().buildTree();
     
-    panel.rgbString(0, rExpr);
-    panel.rgbString(1, gExpr);
-    panel.rgbString(2, bExpr);
+    panel.rgbString(0, red);
+    panel.rgbString(1, green);
+    panel.rgbString(2, blue);
     
-    redText.setText(rExpr.stringFunction());
-    greenText.setText(gExpr.stringFunction());
-    blueText.setText(bExpr.stringFunction());
+    redText.setText(red.stringFunction());
+    greenText.setText(green.stringFunction());
+    blueText.setText(blue.stringFunction());
   }
   
  
